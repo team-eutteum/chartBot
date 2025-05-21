@@ -14,6 +14,7 @@ def run_bot(title: str):
 
     now = datetime.now().strftime('%m/%d %H:%M')
     header = "🧡" + title + " 차트 순위 | " + now + "🧡" +"\n"
+    hashTag = title.replace(" ", "")
 
     # 전송할 문구 formatter
     melon_text = format_tweet(melon_data, '멜론 TOP100')
@@ -21,7 +22,7 @@ def run_bot(title: str):
     bugs_text = format_tweet(bugs_data, '벅스 실시간')
     flo_text = format_tweet(flo_data, '플로 실시간')
 
-    footer = "\n" + '#RIIZE #라이즈 #FlyUp #' + title +'_RIIZE #ODYSSEY'
+    footer = "\n" + '#RIIZE #라이즈 #' + hashTag + ' #' + hashTag +'_RIIZE #ODYSSEY'
 
     tweet_text = header + melon_text + genie_text + bugs_text + flo_text + footer
 
