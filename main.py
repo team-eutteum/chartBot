@@ -21,7 +21,9 @@ def run_bot(title: str):
     bugs_text = format_tweet(bugs_data, '벅스 실시간')
     flo_text = format_tweet(flo_data, '플로 실시간')
 
-    tweet_text = header + melon_text + genie_text + bugs_text + flo_text
+    footer = "\n" + '#RIIZE #라이즈 #FlyUp #' + title +'_RIIZE #ODYSSEY'
+
+    tweet_text = header + melon_text + genie_text + bugs_text + flo_text + footer
 
     # 트윗 전송 함수
     send_tweet(tweet_text)
