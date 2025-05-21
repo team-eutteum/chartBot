@@ -5,7 +5,7 @@ def format_tweet(data: list[tuple], header) -> str:
 
     if not data:
         logger.info(header +  ' 차트 데이터 없음 - 차트 미진입')
-        return "\n" + f"header: ⚠️차트 미진입⚠️"
+        return "\n" + header + ": ⚠️차트 미진입⚠️"
 
     lines = []
     for item in data:
