@@ -15,10 +15,10 @@ def format_tweet(data: list[tuple], header) -> str:
         if change > 0:
             change_symbol = "🔺" + str(abs(change))
         elif change < 0:
-            change_symbol = "🔻" + str(abs(change))
+            change_symbol = "▼" + str(abs(change))
         else:
             change_symbol = "="
 
-        lines.append(f"{header}: {rank}위({change_symbol})")
+        lines.append(f"{header}: {rank}위 ({change_symbol})")
 
     return "\n" + "\n".join(lines)
