@@ -1,8 +1,10 @@
 from config.settings import get_connection
 from datetime import datetime, timedelta
+from utils.logger import setup_logger
 
 
 def get_chart_data(title: str, platform: str, type:str = 'realtime'):
+    logger = setup_logger("tweet")
     conn = get_connection()
 
     now = datetime.now()
@@ -10,7 +12,8 @@ def get_chart_data(title: str, platform: str, type:str = 'realtime'):
 
     if platform == 'genie_chart':
         #2시 ~ 6시 차트운영 X -> 1시 데이터 제공
-        start_time = now.replace(hour = 1, minute=0, second=0, microsecond=0)
+        if 2 < start_time.hour < 7:
+            start_time = now.replace(hour = 1, minute=0, second=0, microsecond=0)
 
     end_time = start_time + timedelta(hours=1)
 
@@ -35,4 +38,5 @@ def get_chart_data(title: str, platform: str, type:str = 'realtime'):
 
     finally:
         conn.close()
+        logger.info(platform + ' ' + type + ' : 데이터 가져오기 성공')
         return results
