@@ -14,8 +14,8 @@ def run_bot(title: str):
 
     day_text = ''
 
-    # 12시: 일간차트 추가
-    if datetime.now().hour == 12:
+    # 13시: 일간차트 추가
+    if datetime.now().hour == 13:
         melon_day_data = get_chart_data(title, 'melon_chart', 'genre100')
         melon_day_text = format_tweet(melon_day_data, '멜론 일간')
 
