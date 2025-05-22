@@ -11,7 +11,7 @@ def get_chart_data(title: str, platform: str, type:str = 'realtime'):
     start_time = now.replace(minute=0, second=0, microsecond=0)
 
     if type == 'day' or type == 'genre100':
-        start_time = now.replace(hour=13, minute=0, second=0, microsecond=0)- timedelta(days=1)
+        start_time = now.replace(hour=13, minute=0, second=0, microsecond=0)
 
     if platform == 'genie_chart':
         #2시 ~ 6시 차트운영 X -> 1시 데이터 제공
