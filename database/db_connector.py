@@ -10,7 +10,7 @@ def get_chart_data(title: str, platform: str, type:str = 'realtime'):
     now = datetime.now()
     start_time = now.replace(minute=0, second=0, microsecond=0)
 
-    if type == 'day' or type == 'genre100':
+    if type == 'day' or type == 'genre100': #일간차트
         start_time = now.replace(hour=13, minute=0, second=0, microsecond=0)
 
     if platform == 'genie_chart':

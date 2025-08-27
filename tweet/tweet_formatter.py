@@ -11,7 +11,6 @@ def format_tweet(data: list[tuple], header) -> str:
     for item in data:
         rank = item[1]
         change_str = item[2] #'new' 또는 숫자 문자열
-        # change = int(item[2])
 
         #신규 진입
         if change_str.lower() == "new":
