@@ -35,7 +35,8 @@ def run_bot(title: str):
     bugs_text = format_tweet(bugs_data, '벅스 실시간')
     flo_text = '\n\n' + hour_ago + format_tweet(flo_data, '플로 실시간')
 
-    footer = "\n\n" + '🔥스밍 계속 체크하기🔥' + "\n\n" + '#RIIZE #라이즈 #' + hashTag + ' #RIIZE_' + hashTag
+    #footer = "\n\n" + '🔥스밍 계속 체크하기🔥' + "\n\n" + '#RIIZE #라이즈 #' + hashTag + ' #RIIZE_' + hashTag
+    footer = "\n\n" + '🔥스밍 계속 체크하기🔥' + "\n\n" + '#RIIZE #라이즈 #dyd #RIIZE_dyd' #dyd용 footer
 
     tweet_text = header + day_text + melon_text + genie_text + bugs_text + flo_text  + footer
 
